@@ -1,7 +1,7 @@
 
 #日志配置
 logging:
-  config: classpath:logback-teemo.xml
+  config: classpath:logback-dev.xml
 
 #jdbc
 spring:
@@ -10,12 +10,20 @@ spring:
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456
+#redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    pool:
+      max-active: 8
+      min-idle: 1
+      max-wait: -1
 
 #mybatis
 mybatis:
   mapper-locations: classpath:mappers/*.mapper.xml
   type-aliases-package: com.teemo.model.entity
-
 
 
 
